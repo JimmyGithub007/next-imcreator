@@ -48,24 +48,17 @@ const Slider = () => {
         >
         {
             [1, 2, 3].map((value, key) => {
-                return value === page && <motion.img
+                return value === page && <motion.div
                     key={key}
                     variants={variants}
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    src={`/assets/panel/panel${value}.png`}
-                    className="h-[500px]"
-                />
+                >
+                    <Image alt="" height={400} width={400} src={`/assets/panel/panel${value}.png`} />
+                </motion.div>
             })
         }
-        <div className="flex gap-2 items-center">
-            {
-                [1, 2, 3].map((value, key) => {
-                    return <div key={key} className={`${value == page ? "bg-blue-950" : "bg-slate-200"} duration-300 w-2 h-2 rounded-full shadow-2xl`}></div>
-                })
-            }
-        </div>
     </motion.div>
 }
 
