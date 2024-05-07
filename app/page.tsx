@@ -1,23 +1,28 @@
 "use client";
 
 import { createContext, useEffect, useState } from "react";
-import { About, Contact, Header, Panel, ScrollDot, Service, Work } from "@/components";
+import { About, Contact, Header, Menu, Panel, ScrollDot, Service, Work } from "@/components";
 import { LuMouse } from "react-icons/lu";
 
 type shareContextType = {
   floor: number;
   setFloor: React.Dispatch<React.SetStateAction<number>>;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const shareContextDefaultValues: shareContextType = {
   floor: 0,
   setFloor: () => {},
+  isOpen: false,
+  setIsOpen: () => {},
 };
 
 export const ShareContext = createContext<shareContextType>(shareContextDefaultValues);
 
 const Home = () => {
-  const [floor, setFloor] = useState<number>(0)
+  const [ floor, setFloor ] = useState<number>(0);
+  const [ isOpen, setIsOpen ] = useState<boolean>(false);
 
   useEffect(() => {
     console.log(floor)
@@ -43,9 +48,10 @@ const Home = () => {
     };
   }, []);
 
-  return (<ShareContext.Provider value={{ floor, setFloor }}>
+  return (<ShareContext.Provider value={{ floor, setFloor, isOpen, setIsOpen }}>
     <main className="flex flex-col overflow-hidden">
       <ScrollDot />
+      <Menu />
       <Header />
       <Panel />
       <About />
