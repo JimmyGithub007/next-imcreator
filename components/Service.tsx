@@ -47,7 +47,7 @@ const Service = () => {
                     delay: 0.2
                 }
             }}
-            className="border-4 border-blue-950 p-4 rounded-md text-lg sm:text-2xl">
+            className="border-4 border-blue-950 p-4 rounded-md text-md sm:text-2xl">
             包括从设计，选布料，款式，衣服做法，到成品进包装，等等的一站式服务
         </motion.h1 >
         <div className="flex gap-2 sm:gap-4 items-center">

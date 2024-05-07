@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaArrowDown } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Typewriter from "typewriter-effect";
 import Image from "next/image";
+import { ShareContext } from "@/app/page";
 
 const variants = {
     enter: {
@@ -23,7 +24,8 @@ const variants = {
 };
 
 const Panel = () => {
-    const [page, setPage] = useState(1);
+    const { setFloor } = useContext(ShareContext);
+    const [ page, setPage ] = useState(1);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -54,7 +56,7 @@ const Panel = () => {
                     }}
                 />
             </motion.h1>
-            <div className="flex items-center justify-center h-60 w-60 sm:h-96 sm:w-96 border-2">
+            <div className="flex items-center justify-center h-60 w-60 sm:h-96 sm:w-96 border-2 overflow-hidden">
                 {
                     [1, 2, 3].map((value, key) => {
                         return value === page && <motion.div
@@ -82,7 +84,8 @@ const Panel = () => {
                 }}
                 className="flex justify-center w-[300px]">
                 <button 
-                    className="border-4 border-blue-950 font-bold px-4 py-2 rounded-md text-md sm:text-2xl hover:bg-blue-950 hover:text-white duration-300">
+                    onClick={() => setFloor(4) }
+                    className="border-4 border-blue-950 duration-100 font-bold px-4 py-2 rounded-md text-md sm:text-2xl hover:bg-blue-950 hover:text-white">
                     直接联系我们
                 </button>
             </motion.div>
@@ -97,7 +100,8 @@ const Panel = () => {
                     duration: 1,
                 }
             }}
-            className="border-4 border-blue-950 flex font-bold items-center px-4 py-2 rounded-md text-md sm:text-2xl hover:bg-blue-950 hover:text-white duration-300">
+            onClick={() => setFloor(1) }
+            className="border-4 border-blue-950 duration-100 flex font-bold items-center px-4 py-2 rounded-md text-md sm:text-2xl hover:bg-blue-950 hover:text-white">
             <FaArrowDown />
             关于我们
         </motion.button>

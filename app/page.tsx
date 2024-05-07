@@ -1,8 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { About, Contact, Header, Panel, ScrollDot, Service, Work } from "@/components";
 import { LuMouse } from "react-icons/lu";
+
+type shareContextType = {
+  floor: number;
+  setFloor: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const shareContextDefaultValues: shareContextType = {
+  floor: 0,
+  setFloor: () => {},
+};
+
+export const ShareContext = createContext<shareContextType>(shareContextDefaultValues);
 
 const Home = () => {
   const [floor, setFloor] = useState<number>(0)
@@ -31,20 +43,20 @@ const Home = () => {
     };
   }, []);
 
-  return (
+  return (<ShareContext.Provider value={{ floor, setFloor }}>
     <main className="flex flex-col overflow-hidden">
-      <ScrollDot floor={floor} />
+      <ScrollDot />
       <Header />
       <Panel />
       <About />
       <Service />
       <Work />
       <Contact />
-      <div className="fixed flex justify-center top-[95%] w-full">
+      { floor !== 4 && <div className="fixed flex justify-center top-[95%] w-full">
         <LuMouse className="animate-bounce text-blue-950 text-5xl z-10" />
-      </div>
+      </div> }
     </main>
-  );
+  </ShareContext.Provider>);
 }
 
 export default Home;

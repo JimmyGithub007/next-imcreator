@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { GrBottomCorner, GrTopCorner } from "react-icons/gr";
+//import { GrBottomCorner, GrTopCorner } from "react-icons/gr";
 
 import Image from "next/image";
 import Typewriter from 'typewriter-effect';
