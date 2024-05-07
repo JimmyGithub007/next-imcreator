@@ -1,11 +1,9 @@
-import { FaMapLocation, FaSquarePhone } from "react-icons/fa6";
-import { MdMail } from "react-icons/md";
-import { IoIosSend } from "react-icons/io";
-import { FaFacebookF } from "react-icons/fa";
-import { RiWhatsappFill } from "react-icons/ri";
-import { FaInstagram } from "react-icons/fa";
-
 import { motion } from "framer-motion"
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaMapLocation, FaSquarePhone } from "react-icons/fa6";
+import { IoIosSend } from "react-icons/io";
+import { MdMail } from "react-icons/md";
+import { RiWhatsappFill } from "react-icons/ri";
 
 const Contact = () => {
     const contactWays = [
@@ -14,10 +12,10 @@ const Contact = () => {
         { icon: <MdMail className="bg-blue-950 rounded-xl p-1 text-white text-3xl shadow-xl" />, text: 'sales@imcreator.asia' },
     ];
 
-    return (<div id="floor4" className="bg-slate-100 flex font-bold gap-8 h-screen text-blue-950">
+    return (<div id="floor4" className="bg-slate-100 flex flex-col sm:flex-row font-bold gap-4 sm:gap-8 h-screen text-blue-950 items-center justify-center">
         <div
-            className="bg-slate-50 flex flex-col gap-8 h-full justify-center p-4">
-            <div className="flex gap-4 items-center">
+            className="sm:bg-slate-50 flex flex-col-reverse sm:flex-col gap-4 sm:gap-8 sm:h-full justify-center px-8">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
                 <motion.h1
                     initial={{
                         opacity: 0,
@@ -30,7 +28,7 @@ const Contact = () => {
                             duration: 1,
                         }
                     }}
-                    className="text-5xl text-sideways">如<br />何<br />找<br />到<br />我<br />们<br />？</motion.h1>
+                    className="text-center text-2xl sm:text-5xl">如<br className="hidden sm:block" />何<br className="hidden sm:block" />找<br className="hidden sm:block" />到<br className="hidden sm:block" />我<br className="hidden sm:block" />们<br className="hidden sm:block" />?</motion.h1>
                 <div className="flex flex-col gap-4">
                     {
                         contactWays.map((value, key) => {
@@ -70,22 +68,22 @@ const Contact = () => {
                         duration: 2,
                     }
                 }}
-                className="flex gap-8 justify-center text-3xl">
+                className="flex gap-8 justify-center text-2xl sm:text-3xl">
                 <FaFacebookF />
                 <FaInstagram />
                 <RiWhatsappFill />
             </motion.div>
         </div>
         <div className="flex w-full items-center justify-center">
-            <div className="flex flex-col gap-6 w-[350px]">
+            <div className="flex flex-col gap-4 sm:gap-6 w-full sm:w-[350px] px-8">
                 <motion.h1
                     initial={{
                         opacity: 0,
-                        y: -50,
+                        x: 50,
                     }}
                     whileInView={{
                         opacity: 1,
-                        y: 0,
+                        x: 0,
                         transition: {
                             duration: 1,
                         }
@@ -175,7 +173,7 @@ const Contact = () => {
                             delay: 0.4,
                         }
                     }}
-                    className="bg-blue-950 flex gap-2 items-center justify-center px-4 py-2 rounded-md shadow-xl text-white"
+                    className="bg-blue-950 duration-200 flex gap-2 items-center justify-center px-4 py-2 rounded-md shadow-xl text-white hover:text-blue-950 hover:bg-slate-200 active:bg-slate-300 active:shadow-sm"
                 >
                     <IoIosSend className="bg-white p-1 rounded-full text-blue-950 text-2xl" /> 发送信息
                 </motion.button>

@@ -1,10 +1,11 @@
 "use client";
 
-import { About, Contact, Header, Panel, ScrollDot, Service, Work } from "@/components";
 import { useEffect, useState } from "react";
+import { About, Contact, Header, Panel, ScrollDot, Service, Work } from "@/components";
+import { LuMouse } from "react-icons/lu";
 
 const Home = () => {
-  const [ floor, setFloor ] = useState<number>(0)
+  const [floor, setFloor] = useState<number>(0)
 
   useEffect(() => {
     console.log(floor)
@@ -13,10 +14,10 @@ const Home = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }, [floor])
-  
+
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
-      if(event.deltaY > 0) {
+      if (event.deltaY > 0) {
         setFloor(prevFloor => prevFloor < 4 ? prevFloor + 1 : prevFloor);
       } else {
         setFloor(prevFloor => prevFloor > 0 ? prevFloor - 1 : prevFloor);
@@ -31,7 +32,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col overflow-hidden">
       <ScrollDot floor={floor} />
       <Header />
       <Panel />
@@ -39,6 +40,9 @@ const Home = () => {
       <Service />
       <Work />
       <Contact />
+      <div className="fixed flex justify-center top-[95%] w-full">
+        <LuMouse className="animate-bounce text-blue-950 text-5xl z-10" />
+      </div>
     </main>
   );
 }
