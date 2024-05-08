@@ -3,10 +3,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LuMouse } from "react-icons/lu";
+import { IoChevronDownCircleOutline } from "react-icons/io5";
 import { About, Contact, Header, Menu, Panel, ScrollDot, Service, Work } from "@/components";
 import { RootState } from "@/store";
 import { minusFloor, plusFloor, setFloor } from "@/store/slice/floorSlice";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -47,10 +48,30 @@ const Home = () => {
       <Service />
       <Work />
       <Contact />
-      {floor !== 4 && <motion.div className="font-bold fixed flex flex-col items-center justify-center bottom-[1%] w-full">
-        <LuMouse className="animate-bounce text-blue-950 text-4xl z-10" />
-        Scroll
-      </motion.div>}
+      { floor !== 4 && 
+        <AnimatePresence>
+          <motion.div 
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+              transition: {
+                duration: 1,
+              }
+            }}
+            className="font-bold fixed flex-col items-center justify-center bottom-[1%] w-full flex">
+            <LuMouse className="animate-bounce text-blue-950 text-4xl z-10 hidden sm:block" />
+            <IoChevronDownCircleOutline 
+              onClick={() => {
+                dispatch(plusFloor());
+              }}
+              className="animate-bounce duration-200 text-blue-950 text-6xl z-10 block sm:hidden" 
+            />
+            <span className="hidden sm:block">Scroll</span>
+          </motion.div>
+        </AnimatePresence>
+      }
     </main>
   );
 }

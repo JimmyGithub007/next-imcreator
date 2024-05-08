@@ -11,7 +11,7 @@ const Header = () => {
     const { floor } = useSelector((state: RootState) => state.floor);
 
     return (<div className={`bg-white duration-300 fixed top-0 w-full z-10 ${floor > 0 ? "h-16" : "h-28"}`}>
-        <div className="duration-300 flex h-full items-center justify-between px-8">
+        <div className="duration-300 flex h-full items-center justify-between px-4">
             <div className={`duration-300 overflow-hidden ${floor > 0 ? "h-[50px]" : "h-[100px]"}`}>
                 <Image className={`duration-300 rounded-md ${floor > 0 ? "-translate-y-[25px] w-[100px]" : "-translate-y-[50px] w-[200px]"}`} alt="logo" width={200} height={200} src={"/assets/logo.jpg"} />
             </div>

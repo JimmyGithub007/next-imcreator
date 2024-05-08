@@ -111,7 +111,7 @@ const Contact = () => {
                             duration: 1,
                         }
                     }}
-                    className="px-4 py-2 rounded-md shadow-md" placeholder="称呼方式"
+                    className="px-4 py-2 rounded-md shadow-md" placeholder="称呼方式" type="text"
                 />
                 <motion.input
                     initial={{
@@ -128,7 +128,7 @@ const Contact = () => {
                             delay: 0.1,
                         }
                     }}
-                    className="px-4 py-2 rounded-md shadow-md" placeholder="邮件地址"
+                    className="px-4 py-2 rounded-md shadow-md" placeholder="邮件地址" type="email"
                 />
                 <motion.input
                     initial={{
@@ -145,7 +145,7 @@ const Contact = () => {
                             delay: 0.2,
                         }
                     }}
-                    className="px-4 py-2 rounded-md shadow-md" placeholder="联系号码"
+                    className="px-4 py-2 rounded-md shadow-md" placeholder="联系号码" type="text"
                 />
                 <motion.textarea
                     initial={{
