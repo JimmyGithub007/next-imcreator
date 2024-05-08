@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import { ShareContext } from "@/app/page";
-import { AnimatePresence, motion, Variants } from "framer-motion";
 import { IoIosClose } from "react-icons/io";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { AnimatePresence, motion, Variants } from "framer-motion";
+import { RootState } from "@/store";
+import { setFloor, setIsOpen } from "@/store/slice/floorSlice";
 
 const Menu = () => {
-    const { floor, setFloor, isOpen, setIsOpen } = useContext(ShareContext);
+    const dispatch = useDispatch();
+    const { floor, isOpen } = useSelector((state: RootState) => state.floor);
 
     return (<AnimatePresence>
         {isOpen &&
@@ -22,7 +22,7 @@ const Menu = () => {
                 <div className="flex flex-col items-center gap-4 font-bold text-2xl pt-[64px]">
                     {
                         ["主页", "关于我们", "我们提供的服务", "成品展示", "联系我们"].map((value, key) => (
-                            <button key={key} onClick={() => { setFloor(key); setIsOpen(false) }} className={`duration-200 hover:text-slate-300 ${key === floor ? "text-slate-400" : "text-blue-950"}`}>{value}</button> 
+                            <button key={key} onClick={() => { dispatch(setFloor(key)); dispatch(setIsOpen(false)) }} className={`duration-200 hover:text-slate-300 ${key === floor ? "text-slate-400" : "text-blue-950"}`}>{value}</button> 
                         ))
                     }
                     <motion.button
@@ -36,7 +36,7 @@ const Menu = () => {
                             duration: 0.2
                         }}
                         className="duration-200 hover:text-slate-300 text-6xl"
-                        onClick={() => setIsOpen(false)}>
+                        onClick={() => dispatch(setIsOpen(false))}>
                         <IoIosClose />
                     </motion.button>
                 </div>

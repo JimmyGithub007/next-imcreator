@@ -1,12 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { IoIosClose } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
-import { ShareContext } from "@/app/page";
+import { RootState } from "@/store";
+import { useSelector } from "react-redux";
 
 const Work = () => {
-    const { floor } = useContext(ShareContext);
+    const { floor } = useSelector((state: RootState) => state.floor);
     const [ selectedId, setSelectedId ] = useState<string>("")
 
     useEffect(() => {
@@ -29,7 +30,7 @@ const Work = () => {
                         duration: 1,
                     }
                 }}
-                className="border-4 border-blue-950 p-2 sm:p-4 rounded-md text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                className="border-4 border-blue-950 p-2 sm:p-4 rounded-md text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                 成<br className="hidden lg:block" />品<br className="hidden lg:block" />展<br className="hidden lg:block" />示
             </motion.h1>
             <div className="flex gap-1 sm:gap-2 md:gap-2 lg:gap-4">

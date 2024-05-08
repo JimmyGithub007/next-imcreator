@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import Typewriter from "typewriter-effect";
 import Image from "next/image";
-import { ShareContext } from "@/app/page";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store";
+import { setFloor } from "@/store/slice/floorSlice";
 
 const variants = {
     enter: {
@@ -24,7 +26,7 @@ const variants = {
 };
 
 const Panel = () => {
-    const { setFloor } = useContext(ShareContext);
+    const dispatch = useDispatch();
     const [ page, setPage ] = useState(1);
 
     useEffect(() => {
@@ -47,7 +49,7 @@ const Panel = () => {
                         duration: 1,
                     }
                 }}
-                className="text-xl sm:text-3xl font-bold w-screen lg:w-[300px] text-center lg:text-left">
+                className="text-xl sm:text-2xl font-bold w-screen lg:w-[300px] text-center lg:text-left">
                 <Typewriter
                     options={{
                         strings: ['欢迎来到IMCREATOR', '我们提供一站式服装印刷服务'],
@@ -84,8 +86,8 @@ const Panel = () => {
                 }}
                 className="flex justify-center w-[300px]">
                 <button 
-                    onClick={() => setFloor(4) }
-                    className="border-4 border-blue-950 duration-100 font-bold px-4 py-2 rounded-md text-md sm:text-2xl hover:bg-blue-950 hover:text-white">
+                    onClick={() => dispatch(setFloor(4)) }
+                    className="border-4 border-blue-950 duration-100 font-bold px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white">
                     直接联系我们
                 </button>
             </motion.div>
@@ -100,8 +102,8 @@ const Panel = () => {
                     duration: 1,
                 }
             }}
-            onClick={() => setFloor(1) }
-            className="border-4 border-blue-950 duration-100 flex font-bold items-center px-4 py-2 rounded-md text-md sm:text-2xl hover:bg-blue-950 hover:text-white">
+            onClick={() => dispatch(setFloor(1)) }
+            className="border-4 border-blue-950 duration-100 flex font-bold items-center px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white">
             <FaArrowDown />
             关于我们
         </motion.button>

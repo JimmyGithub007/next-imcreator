@@ -12,9 +12,9 @@ const Contact = () => {
         { icon: <MdMail className="bg-blue-950 rounded-xl p-1 text-white text-2xl sm:text-3xl shadow-xl" />, text: 'sales@imcreator.asia' },
     ];
 
-    return (<div id="floor4" className="bg-slate-100 font-bold flex flex-col gap-4 h-screen items-center justify-center sm:flex-row sm:gap-8 text-blue-950 pt-[64px]">
+    return (<div id="floor4" className="bg-slate-100 font-bold flex flex-col gap-4 h-screen justify-center sm:flex-row sm:gap-8 text-blue-950 pt-[64px]">
         <div className="sm:bg-slate-50 flex flex-col-reverse sm:flex-col gap-2 sm:gap-8 sm:h-full justify-center px-8">
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 sm:items-center">
                 <motion.h1
                     initial={{
                         opacity: 0,
@@ -27,7 +27,14 @@ const Contact = () => {
                             duration: 1,
                         }
                     }}
-                    className="text-center text-xl sm:text-5xl">如<br className="hidden sm:block" />何<br className="hidden sm:block" />找<br className="hidden sm:block" />到<br className="hidden sm:block" />我<br className="hidden sm:block" />们<br className="hidden sm:block" />?</motion.h1>
+                    className="sm:text-center text-xl sm:text-5xl">
+                    如<br className="hidden sm:block" />
+                    何<br className="hidden sm:block" />
+                    找<br className="hidden sm:block" />
+                    到<br className="hidden sm:block" />
+                    我<br className="hidden sm:block" />
+                    们<br className="hidden sm:block" />?
+                </motion.h1>
                 <div className="flex flex-col gap-2 sm:gap-4">
                     {
                         contactWays.map((value, key) => {
@@ -73,8 +80,8 @@ const Contact = () => {
                 <RiWhatsappFill className="cursor-pointer duration-200 hover:opacity-60" onClick={() => window.open("https://wa.me/60167555707", "_blank")} />
             </motion.div>
         </div>
-        <div className="flex flex-col gap-1 sm:gap-8 w-full items-center justify-center">
-            <div className="flex flex-col gap-3 sm:gap-6 w-full sm:w-[350px] px-8">
+        <div className="flex flex-col gap-1 sm:gap-8 w-full items-center justify-center px-8 sm:px-0">
+            <div className="flex flex-col gap-3 sm:gap-6 w-full sm:w-[350px]">
                 <motion.h1
                     initial={{
                         opacity: 0,
