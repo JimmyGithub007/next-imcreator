@@ -52,7 +52,7 @@ const Panel = () => {
                 className="text-xl sm:text-2xl font-bold w-screen lg:w-[300px] text-center lg:text-left">
                 <Typewriter
                     options={{
-                        strings: ['欢迎来到IMCREATOR', '我们提供一站式服装印刷服务'],
+                        strings: ['Welcome to IMCREATOR', 'We have one-stop service for t-shirt printing'],
                         autoStart: true,
                         loop: true,
                     }}
@@ -88,7 +88,7 @@ const Panel = () => {
                 <button 
                     onClick={() => dispatch(setFloor(4)) }
                     className="border-4 border-blue-950 duration-100 font-bold px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white">
-                    直接联系我们
+                    CONTACT US
                 </button>
             </motion.div>
         </div>
@@ -105,7 +105,7 @@ const Panel = () => {
             onClick={() => dispatch(setFloor(1)) }
             className="border-4 border-blue-950 duration-100 flex font-bold items-center px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white">
             <FaArrowDown />
-            关于我们
+            ABOUT US
         </motion.button>
     </div>)
 }

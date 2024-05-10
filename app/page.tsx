@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LuMouse } from "react-icons/lu";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
-import { About, Contact, Header, Menu, Panel, ScrollDot, Service, Work } from "@/components";
+import { About, Contact, Header, Loading, Menu, Panel, ScrollDot, Service, Work } from "@/components";
 import { RootState } from "@/store";
 import { minusFloor, plusFloor, setFloor } from "@/store/slice/floorSlice";
 import { AnimatePresence, motion } from "framer-motion";
@@ -12,7 +12,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const Home = () => {
   const dispatch = useDispatch();
   const { floor } = useSelector((state: RootState) => state.floor);
-
+  const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
     const element = document.getElementById(`floor${floor}`);
@@ -38,8 +38,30 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  if(loading) return <div className="flex items-center justify-center h-screen w-screen"><Loading /></div>
+
   return (
-    <main className="flex flex-col overflow-hidden">
+    <motion.main 
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 1,
+        }
+      }}
+      className="flex flex-col overflow-hidden">
       <ScrollDot />
       <Menu />
       <Header />
@@ -55,7 +77,7 @@ const Home = () => {
               opacity: 0,
             }}
             animate={{
-              opacity: 1,
+              opacity: 0.5,
               transition: {
                 duration: 1,
               }
@@ -72,7 +94,7 @@ const Home = () => {
           </motion.div>
         </AnimatePresence>
       }
-    </main>
+    </motion.main>
   );
 }
 

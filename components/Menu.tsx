@@ -21,7 +21,7 @@ const Menu = () => {
                 className="bg-slate-200 fixed h-screen left-0 top-0 w-screen z-20">
                 <div className="flex flex-col items-center gap-4 font-bold text-2xl pt-[64px]">
                     {
-                        ["主页", "关于我们", "我们提供的服务", "成品展示", "联系我们"].map((value, key) => (
+                        ["HOME", "ABOUT US", "OUR SERVICES", "PRODUCT", "CONTACT US"].map((value, key) => (
                             <button key={key} onClick={() => { dispatch(setFloor(key)); dispatch(setIsOpen(false)) }} className={`duration-200 hover:text-slate-300 ${key === floor ? "text-slate-400" : "text-blue-950"}`}>{value}</button> 
                         ))
                     }

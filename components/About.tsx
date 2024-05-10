@@ -9,7 +9,7 @@ const About = () => {
         <div className="flex flex-col lg:flex-row gap-8 relative">
             {/*<GrTopCorner className="absolute text-blue-950 text-7xl sm:text-9xl xl:-left-12 -top-12" />
             <GrBottomCorner className="absolute text-blue-950 text-7xl sm:text-9xl right-0 xl:-right-12 -bottom-12" />*/}
-            <div className="flex flex-col font-bold gap-4 w-screen lg:w-[500px]">
+            <div className="flex flex-col gap-4 w-screen lg:w-[500px]">
                 <motion.div
                     initial={{
                         opacity: 0,
@@ -20,11 +20,11 @@ const About = () => {
                             duration: 1,
                         }
                     }}
-                    className="text-xl sm:text-3xl px-8 md:px-24 lg:px-12"
+                    className="font-bold text-xl sm:text-3xl px-8 md:px-24 lg:px-12"
                 >
                     <Typewriter
                         options={{
-                            strings: ['我们是谁?', '我们是IMCREATOR'],
+                            strings: ['Who we are?', 'We are IMCREATOR'],
                             autoStart: true,
                             loop: true,
                         }}
@@ -41,8 +41,8 @@ const About = () => {
                             delay: 0.1,
                         }
                     }}
-                    className="text-lg sm:text-xl px-8 md:px-24 lg:px-12">
-                    是全JB一站式衣服印制公司</motion.div>
+                    className="text-md sm:text-lg px-8 md:px-24 lg:px-12">
+                    The company which provide one stop t-shirt printing service in JB area</motion.div>
                 <motion.div
                     initial={{
                         opacity: 0,
@@ -54,8 +54,8 @@ const About = () => {
                             delay: 0.2,
                         }
                     }}
-                    className="text-lg sm:text-xl px-8 md:px-24 lg:px-12">
-                    我们的工厂有自己生产布料, 根据顾客的要求来设计&制作衣服。全JB唯一帮顾客“量身而做”, 打造专属您的企业制服, 出门决不会撞衣服
+                    className="text-md sm:text-lg px-8 md:px-24 lg:px-12">
+                    Our factory produces fabrics in-house and designs & manufactures clothes according to customer requirements. We are the only JB that assists customers in "tailoring" their own exclusive corporate uniforms, ensuring you never clash outfits when stepping out.
                 </motion.div>
             </div>
             <div className="flex gap-2 px-8 md:px-24 lg:px-12 justify-center">

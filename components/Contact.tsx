@@ -28,12 +28,11 @@ const Contact = () => {
                         }
                     }}
                     className="sm:text-center text-xl sm:text-5xl">
-                    如<br className="hidden sm:block" />
-                    何<br className="hidden sm:block" />
-                    找<br className="hidden sm:block" />
-                    到<br className="hidden sm:block" />
-                    我<br className="hidden sm:block" />
-                    们<br className="hidden sm:block" />?
+                    HOW<br className="hidden sm:block" />
+                    TO<br className="hidden sm:block" />
+                    FIND<br className="hidden sm:block" />
+                    US<br className="hidden sm:block" />
+                    ?
                 </motion.h1>
                 <div className="flex flex-col gap-2 sm:gap-4">
                     {
@@ -95,7 +94,7 @@ const Contact = () => {
                         }
                     }}
                     className="text-md sm:text-xl text-center">
-                    你也可以留下联系方式, 我们的人员很快便会与你联系
+                    You can also leave your contact information and our staff will contact you soon
                 </motion.h1>
                 <motion.input
                     initial={{
@@ -111,7 +110,7 @@ const Contact = () => {
                             duration: 1,
                         }
                     }}
-                    className="px-4 py-2 rounded-md shadow-md" placeholder="称呼方式" type="text"
+                    className="px-4 py-2 rounded-md shadow-md" placeholder="Your Name" type="text"
                 />
                 <motion.input
                     initial={{
@@ -128,7 +127,7 @@ const Contact = () => {
                             delay: 0.1,
                         }
                     }}
-                    className="px-4 py-2 rounded-md shadow-md" placeholder="邮件地址" type="email"
+                    className="px-4 py-2 rounded-md shadow-md" placeholder="Email Address" type="email"
                 />
                 <motion.input
                     initial={{
@@ -145,7 +144,7 @@ const Contact = () => {
                             delay: 0.2,
                         }
                     }}
-                    className="px-4 py-2 rounded-md shadow-md" placeholder="联系号码" type="text"
+                    className="px-4 py-2 rounded-md shadow-md" placeholder="Contact Number" type="text"
                 />
                 <motion.textarea
                     initial={{
@@ -162,7 +161,7 @@ const Contact = () => {
                             delay: 0.3,
                         }
                     }}
-                    className="px-4 py-2 rounded-md shadow-md h-[120px]" placeholder="告诉我们你的想法..."
+                    className="px-4 py-2 rounded-md shadow-md h-[120px]" placeholder="Tell us what you think..."
                 />
                 <motion.button
                     initial={{

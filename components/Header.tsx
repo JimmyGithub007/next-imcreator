@@ -28,22 +28,12 @@ const Header = () => {
             </motion.button>
             <div className="font-bold gap-4 hidden md:flex">
                 {
-                    ["主页", "关于我们", "我们提供的服务", "成品展示", "联系我们"].map((value, key) => (
-                        <motion.button 
-                            initial={{
-                                opacity: 0,
-                            }}
-                            animate={{
-                                opacity: 1,
-                                transition: {
-                                    duration: 0.5,
-                                    delay: key*0.1
-                                }
-                            }}
+                    ["HOME", "ABOUT US", "OUR SERVICES", "PRODUCT", "CONTACT US"].map((value, key) => (
+                        <button 
                             key={key} onClick={() => { dispatch(setFloor(key)) }} 
                             className={`duration-200 hover:text-slate-300 ${key === floor ? "text-slate-400" : "text-blue-950"}`}>
                             {value}
-                        </motion.button>
+                        </button>
                     ))
                 }
             </div>

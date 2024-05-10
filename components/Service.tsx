@@ -9,14 +9,14 @@ import { FaTruckArrowRight } from "react-icons/fa6";
 
 const Service = () => {
     const services = [
-        { icon: <RiBuilding2Line className="text-4xl sm:text-7xl" />, text: '厂商直销' },
-        { icon: <GrCertificate className="text-4xl sm:text-7xl" />, text: '超过20年经验' },
-        { icon: <RiCustomerService2Line className="text-4xl sm:text-7xl" />, text: '一对一专业线上咨询' },
-        { icon: <IoShirtOutline className="text-4xl sm:text-7xl" />, text: '多种布料' },
-        { icon: <BsPrinter className="text-4xl sm:text-7xl" />, text: '多种印刷方式' }
+        { icon: <RiBuilding2Line className="text-4xl sm:text-7xl" />, text: 'Factory direct sales' },
+        { icon: <GrCertificate className="text-4xl sm:text-7xl" />, text: 'Over 20 years experience' },
+        { icon: <RiCustomerService2Line className="text-4xl sm:text-7xl" />, text: 'One-to-one professional online consultation' },
+        { icon: <IoShirtOutline className="text-4xl sm:text-7xl" />, text: 'Various fabrics' },
+        { icon: <BsPrinter className="text-4xl sm:text-7xl" />, text: 'Various printing methods' }
     ];
 
-    return (<div id="floor2" className="bg-slate-100 flex flex-col font-bold items-center justify-center gap-12 h-screen text-blue-950 px-4">
+    return (<div id="floor2" className="bg-slate-100 flex flex-col font-bold items-center justify-center gap-4 lg:gap-8 h-screen text-blue-950 px-4 lg:pt-[64px]">
         <motion.h1
             initial={{
                 opacity: 0,
@@ -31,7 +31,7 @@ const Service = () => {
                     duration: 1,
                 }
             }}
-            className="font-bold text-2xl sm:text-4xl">我们提供的服务</motion.h1>
+            className="font-bold text-2xl sm:text-4xl">OUR SERVICES</motion.h1>
         <motion.h1
             initial={{
                 opacity: 0,
@@ -47,8 +47,8 @@ const Service = () => {
                     delay: 0.2
                 }
             }}
-            className="border-4 border-blue-950 p-4 rounded-md text-md sm:text-2xl">
-            包括从设计，选布料，款式，衣服做法，到成品进包装，等等的一站式服务
+            className="border-4 border-blue-950 p-4 rounded-md text-md sm:text-2xl max-w-[900px]">
+            One-stop services from design, fabric selection, styles, garment construction, to packaging of finished products, and more.
         </motion.h1 >
         <div className="flex gap-2 sm:gap-4 items-center">
             <motion.div
@@ -67,7 +67,7 @@ const Service = () => {
                     }
                 }}
                 className="bg-blue-950 rounded-md p-4 shadow-md text-white sm:text-3xl text-center">
-                定制<br />流程
+                CUSTOM<br />PROCESS
             </motion.div>
             {
                 [1, 2, 3, 4, 5].map((value, key) => {
@@ -109,9 +109,9 @@ const Service = () => {
                     duration: 1,
                     delay: 0.4
                 }
-            }} className="font-bold text-xl sm:text-3xl">为何选择我们?
+            }} className="font-bold text-xl sm:text-3xl">Why choose us?
         </motion.h1>
-        <div className="bg flex items-center gap-8">
+        <div className="bg flex items-center gap-2">
             {
                 services.map((value, key) => {
                     return <motion.div
@@ -130,9 +130,9 @@ const Service = () => {
                                 delay: 0.3 + key * 0.1
                             }
                         }}
-                        className="flex flex-col gap-4 items-center">
+                        className="flex flex-col gap-4 items-center lg:w-48">
                         {value.icon}
-                        <h1 className="text-md sm:text-2xl text-center">{value.text}</h1>
+                        <h1 className="text-md sm:text-xl text-center">{value.text}</h1>
                     </motion.div>
                 })
             }
