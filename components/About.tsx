@@ -55,7 +55,7 @@ const About = () => {
                         }
                     }}
                     className="text-md sm:text-lg px-8 md:px-24 lg:px-12">
-                    Our factory produces fabrics in-house and designs & manufactures clothes according to customer requirements. We are the only JB that assists customers in "tailoring" their own exclusive corporate uniforms, ensuring you never clash outfits when stepping out.
+                    Our factory produces fabrics in-house and designs & manufactures clothes according to customer requirements. We are the only JB that assists customers in &quot;tailoring&quot; their own exclusive corporate uniforms, ensuring you never clash outfits when stepping out.
                 </motion.div>
             </div>
             <div className="flex gap-2 px-8 md:px-24 lg:px-12 justify-center">
