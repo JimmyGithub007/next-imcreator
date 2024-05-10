@@ -19,7 +19,7 @@ const Work = () => {
     }, [floor])
 
     return (<div id="floor3" className="bg-slate-100 flex flex-col gap-4 h-screen items-center justify-center relative text-blue-950">
-        <div className="flex flex-col lg:flex-row gap-8 items-center sm:px-8 pt-[64px]">
+        <div className="flex flex-col lg:flex-row gap-8 items-center sm:px-8 lg:pt-[64px]">
             <motion.div
                 initial={{
                     opacity: 0,
@@ -36,7 +36,7 @@ const Work = () => {
                 }}
                 className="border-4 border-blue-950 p-2 relative sm:p-4 rounded-md text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl flex items-center lg:block">
                 P<br className="hidden lg:block" />R<br className="hidden lg:block" /><GiShirtButton className="text-2xl sm:text-4xl" />DUCT
-                <PiTShirtThin className="absolute -rotate-12 right-2 top-8 text-8xl hidden lg:block" />
+                <PiTShirtThin className="absolute -rotate-12 right-2 top-8 text-4xl lg:text-6xl xl:text-8xl hidden lg:block" />
             </motion.div>
             <div className="flex gap-1 sm:gap-2 md:gap-2 lg:gap-4">
                 {[0, 1, 2, 3, 4].map((v1, k1) => {

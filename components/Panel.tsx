@@ -37,7 +37,13 @@ const Panel = () => {
         return () => clearInterval(interval); // Clear interval on component unmount
     }, []);
 
-    return (<div id="floor0" className="flex flex-col gap-4 h-screen w-screen items-center justify-center relative">
+    return (<div id="floor0" className="flex flex-col gap-10 h-screen w-screen items-center justify-center relative">
+        <div className="absolute z-20">
+            <Image className="w-[350px] lg:w-[450px]" alt="" height={450} width={450} src={`/assets/panel/white-t-shirt.png`} />
+            <textarea className="absolute bg-[#fff0] resize-none font-bold text-lg lg:text-2xl left-[50%] top-[40%] z-10 w-[70px] h-[125px]  lg:w-[100px] lg:h-[150px] border-4 border-blue-950 rounded-md -translate-x-[50%] -translate-y-[40%] p-1 lg:p-2">
+                Put your design here
+            </textarea>
+        </div>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
             <motion.h1
                 initial={{
@@ -58,9 +64,11 @@ const Panel = () => {
                     }}
                 />
             </motion.h1>
-            <div className="flex items-center justify-center h-60 w-60 sm:h-96 sm:w-96 border-2 overflow-hidden">
+            <div className="flex items-center justify-center h-60 w-60 lg:h-80 lg:w-80 border-2 relative">
+                <div className="absolute h-60 w-60 lg:h-80 lg:w-80 border-2 rotate-6"></div>
+                <div className="absolute h-60 w-60 lg:h-80 lg:w-80 border-2 rotate-12"></div>
                 {
-                    [1, 2, 3].map((value, key) => {
+                    /*[1, 2, 3].map((value, key) => {
                         return value === page && <motion.div
                             key={key}
                             variants={variants}
@@ -70,10 +78,10 @@ const Panel = () => {
                         >
                             <Image alt="" height={400} width={400} src={`/assets/panel/panel${value}.png`} />
                         </motion.div>
-                    })
+                    })*/
                 }
             </div>
-            {/*         <Image className="absolute" alt="" width={550} height={550} src={"/assets/panel/panel1.png"} />*/}
+            {/*<Image className="absolute" alt="" width={550} height={550} src={"/assets/panel/panel1.png"} />*/}
             <motion.div
                 initial={{
                     opacity: 0,
@@ -87,7 +95,7 @@ const Panel = () => {
                 className="flex justify-center w-[300px]">
                 <button 
                     onClick={() => dispatch(setFloor(4)) }
-                    className="border-4 border-blue-950 duration-100 font-bold px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white">
+                    className="border-4 border-blue-950 duration-100 font-bold px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white z-30">
                     CONTACT US
                 </button>
             </motion.div>
@@ -103,7 +111,7 @@ const Panel = () => {
                 }
             }}
             onClick={() => dispatch(setFloor(1)) }
-            className="border-4 border-blue-950 duration-100 flex font-bold items-center px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white">
+            className="border-4 border-blue-950 duration-100 flex font-bold items-center px-4 py-2 rounded-md text-md sm:text-xl hover:bg-blue-950 hover:text-white z-30">
             <FaArrowDown />
             ABOUT US
         </motion.button>
