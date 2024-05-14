@@ -41,7 +41,7 @@ const Home = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => {
       clearTimeout(timeoutId);
@@ -54,9 +54,13 @@ const Home = () => {
     <motion.main 
       initial={{
         opacity: 0,
+        borderRadius: "50%",
+        scale: 0,
       }}
       animate={{
         opacity: 1,
+        borderRadius: 0,
+        scale: 1,
         transition: {
           duration: 1,
         }
@@ -77,18 +81,18 @@ const Home = () => {
               opacity: 0,
             }}
             animate={{
-              opacity: 0.5,
+              opacity: 0.8,
               transition: {
                 duration: 1,
               }
             }}
-            className="font-bold fixed flex-col items-center justify-center bottom-[1%] w-full flex">
-            <LuMouse className="animate-bounce text-blue-950 text-4xl z-10 hidden sm:block" />
+            className="font-bold fixed flex-col items-center justify-center sm:items-end bottom-[1%] w-full flex right-[1%]">
+            <LuMouse className="animate-bounce text-4xl z-10 hidden sm:block" />
             <IoChevronDownCircleOutline 
               onClick={() => {
                 dispatch(plusFloor());
               }}
-              className="animate-bounce duration-200 text-blue-950 text-6xl z-10 block sm:hidden" 
+              className="animate-bounce duration-200 text-6xl z-10 block sm:hidden" 
             />
             <span className="hidden sm:block">Scroll</span>
           </motion.div>

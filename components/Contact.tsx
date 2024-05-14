@@ -183,7 +183,7 @@ const Contact = () => {
                     <IoIosSend className="bg-white p-1 rounded-full text-blue-950 text-2xl" /> 发送信息
                 </motion.button>
             </div>
-            <span className="text-gray-500 text-xs">Jimmy Hoe 2024 All Rights Reserved ©</span>
+            <span className="text-gray-500 text-xs">Imcreator 2024 All Rights Reserved ©</span>
         </div>
     </div>)
 }
