@@ -68,7 +68,7 @@ const Panel = () => {
                         type: "spring",
                         bounce: 0.4,
                     }
-                }}>printing
+                }}><span className="block lg:hidden">t-shirt</span><span className="hidden lg:block">printing</span>
             </motion.h1>
         </div>
         <Image className="absolute w-[350px] lg:w-[450px] z-20" alt="" height={450} width={450} src={`/assets/panel/white-t-shirt.png`} />
@@ -86,7 +86,7 @@ const Panel = () => {
                         type: "spring",
                         bounce: 0.4,
                     }
-                }}>t-shirt
+                }}><span className="block lg:hidden">printing</span><span className="hidden lg:block">t-shirt</span>
             </motion.h1>
             <motion.h1
                 initial={{

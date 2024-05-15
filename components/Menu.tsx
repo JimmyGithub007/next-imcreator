@@ -18,7 +18,7 @@ const Menu = () => {
                     bounce: 0,
                     duration: 0.3
                 }}
-                className="bg-slate-200 fixed h-screen left-0 top-0 w-screen z-40">
+                className="bg-slate-200 fixed h-screen left-0 top-0 w-screen z-50">
                 <div className="flex flex-col items-center gap-4 font-bold text-2xl pt-[64px]">
                     {
                         ["HOME", "ABOUT US", "OUR SERVICES", "PRODUCT", "CONTACT US"].map((value, key) => (

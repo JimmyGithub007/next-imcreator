@@ -55,12 +55,12 @@ const Home = () => {
       initial={{
         opacity: 0,
         borderRadius: "50%",
-        scale: 0,
+        scale: 0.1,
       }}
       animate={{
         opacity: 1,
-        borderRadius: 0,
         scale: 1,
+        borderRadius: 0,
         transition: {
           duration: 1,
         }
@@ -81,20 +81,23 @@ const Home = () => {
               opacity: 0,
             }}
             animate={{
-              opacity: 0.8,
+              opacity: 1,
               transition: {
                 duration: 1,
               }
             }}
-            className="font-bold fixed flex-col items-center justify-center sm:items-end bottom-[1%] w-full flex right-[1%]">
-            <LuMouse className="animate-bounce text-4xl z-10 hidden sm:block" />
+            className="font-bold fixed flex-col items-center justify-center bottom-[1%] w-full flex">
+            <div className="hidden sm:block bg-blue-950 rounded-3xl p-1">
+              <div className="border-white border-2 flex h-12 items-center justify-center rounded-3xl w-8 text-4xl z-10">
+                <div className="animate-scroll bg-white h-2 rounded-full w-2"></div>
+              </div>
+            </div>
             <IoChevronDownCircleOutline 
               onClick={() => {
                 dispatch(plusFloor());
               }}
               className="animate-bounce duration-200 text-6xl z-10 block sm:hidden" 
             />
-            <span className="hidden sm:block">Scroll</span>
           </motion.div>
         </AnimatePresence>
       }
