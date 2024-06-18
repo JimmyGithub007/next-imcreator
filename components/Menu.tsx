@@ -11,18 +11,18 @@ const Menu = () => {
     return (<AnimatePresence>
         {   isOpen &&
             <motion.div
-                initial={{ y: "-120%", borderBottomRightRadius: "100%", borderBottomLeftRadius: "100%" }}
-                animate={{ y: 0, borderBottomRightRadius: "0", borderBottomLeftRadius: "0" }}
-                exit={{ y: "-120%", borderBottomRightRadius: "100%", borderBottomLeftRadius: "100%" }}
+                initial={{ y: "-120%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
                 transition={{
                     bounce: 0,
-                    duration: 1
+                    duration: 0.8
                 }}
-                className="bg-slate-50 fixed h-[calc(100vh-96px)] left-0 top-24 w-screen">
+                className="bg-black fixed h-screen left-0 top-0 w-screen z-40">
                 <div className="flex flex-col items-center gap-4 font-bold text-2xl pt-[64px]">
                     {
                         ["HOME", "ABOUT US", "OUR SERVICES", "PRODUCT", "CONTACT US"].map((value, key) => (
-                            <button key={key} onClick={() => { }} className={`duration-200 hover:text-slate-300 text-blue-950`}>{value}</button>
+                            <button key={key} onClick={() => { }} className={`duration-200 hover:text-slate-500 text-slate-50`}>{value}</button>
                         ))
                     }
                     {/*<motion.button
