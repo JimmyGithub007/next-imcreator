@@ -88,11 +88,11 @@ const Home = () => {
         scale: 1,
         borderRadius: 0,
         transition: {
-          duration: 1,
+          duration: 2,
         }
       }}
       className="flex flex-col">
-      {/*<Header hideHeader={hideHeader} />*/}
+      <Header hideHeader={hideHeader} />
       <Panel />
       <About />
       <Work />

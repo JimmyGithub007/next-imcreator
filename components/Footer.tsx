@@ -18,10 +18,10 @@ const Footer = () => {
             </a>
         </div>
         <div className="min-h-[calc(100vh-300px)] w-full">
-            <div className="bg-black bottom-0 fixed flex flex-col gap-8 min-h-[calc(100vh-300px)] items-center justify-center text-gray-300 w-full">
+            <div className="bg-black bottom-0 fixed flex flex-col gap-8 min-h-[calc(100vh-300px)] items-center justify-center text-gray-300 w-full px-8">
                 <h1>Visit & Contact Us</h1>
-                <div className="flex flex-col items-center gap-2 text-xl md:text-3xl">
-                    <div className="flex gap-2 items-center"><LuMapPin />Address: 5,Jalan Rosmerah 2/5, Johor Bahru, Malaysia</div>
+                <div className="flex flex-col sm:items-center gap-2 text-xl md:text-3xl">
+                    <div className="flex gap-2 items-center"><LuMapPin className="text-3xl" />Address: 5,Jalan Rosmerah 2/5, Johor Bahru, Malaysia</div>
                     <div className="flex gap-2 items-center"><LuPhone />Phone Number: +(60)16-755 5707</div>
                     <div className="flex gap-2 items-center"><MdOutlineAccessTime />Working Housrs: <span className={`text-orange-300 ${merienda.className}`}>Always Open</span></div>
                 </div>

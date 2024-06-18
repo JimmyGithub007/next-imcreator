@@ -26,8 +26,8 @@ const Work = () => {
 
     const percent: number[] = [30, 70, 30, 60];
 
-    return (<div id="floor3" className="bg-slate-50 z-10">
-        <div className="-rotate-2"><TextParallax title="GALLERY GALLERY" /></div>
+    return (<div className="bg-slate-50 z-10 hidden sm:block">
+        <div className="-rotate-2"><TextParallax title="PRODUCT GALLERY" /></div>
         <div ref={container} className="bg-slate-200 h-[175vh] overflow-hidden">
             <div className={`flex gap-8`}>
                 {[y, y1, y2, y3].map((v1, k1) => {

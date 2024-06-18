@@ -8,10 +8,10 @@ import { Menu } from ".";
 const Header = ({ hideHeader }: { hideHeader: boolean }) => {
     const dispatch = useDispatch();
 
-    return (<motion.div className={`duration-100 fixed w-screen h-24 left-0 z-50 ${hideHeader ? "-top-24" : "top-0"}`}>
-        <motion.div className="bg-slate-50 flex h-24 items-center justify-between px-8 w-full z-100">
+    return (<motion.div className={`duration-100 fixed w-screen left-0 z-50`}>
+        <motion.div className="bg-slate-50 flex h-12 items-center justify-between px-8 w-full z-100">
             <h1 className="font-bold text-xl z-10">IMCreator.</h1>
-            <MenuToggleButton />
+            {/*<MenuToggleButton />*/}
         </motion.div>
         <Menu />
     </motion.div>)
