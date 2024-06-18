@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Ubuntu } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { StoreProvider } from "@/store/StoreProvider";
 import "./globals.css";
 
-const inter = Ubuntu({ subsets: ["latin"], weight: '400' });
+const outfit = Outfit({ subsets: ["latin"], weight: '400' });
 
 export const metadata: Metadata = {
   title: "IMCREATOR",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (<StoreProvider>
     <html lang="en">
-      <body className={inter.className}>
+      <body className={outfit.className}>
         {children}
       </body>
     </html>

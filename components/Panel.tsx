@@ -1,111 +1,29 @@
-import { useContext, useEffect, useState } from "react";
-import { FaArrowDown } from "react-icons/fa6";
-import { motion, AnimatePresence } from "framer-motion";
+"use client";
 
-import Typewriter from "typewriter-effect";
-import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/store";
-import { setFloor } from "@/store/slice/floorSlice";
-
-const variants = {
-    enter: {
-        x: 200,
-        opacity: 0
-    },
-    center: {
-        zIndex: 1,
-        x: 0,
-        opacity: 1
-    },
-    exit: {
-        zIndex: 0,
-        x: -200,
-        opacity: 0
-    }
-};
+import { FaPhoneFlip } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
+import { Monoton } from "next/font/google";
+const monoton = Monoton({ subsets: ["latin"], weight: '400' });
+import CustomSwiper from "@/utils/CustomSwiper";
 
 const Panel = () => {
-    /*const dispatch = useDispatch();
-    const [page, setPage] = useState(1);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setPage((prevPage) => (prevPage % 3) + 1); // Wrap around to 1 after reaching page 3
-        }, 5000);
-
-        return () => clearInterval(interval); // Clear interval on component unmount
-    }, []);*/
-
-    return (<div id="floor0" className="bg-slate-200 flex flex-col lg:flex-row h-screen w-screen items-center justify-center relative">
-        <div className="text-white text-8xl lg:text-9xl pb-[180px] lg:pb-0 lg:pr-[100px] z-10">
-            <motion.h1
-                initial={{
-                    opacity: 0,
-                    x: 200
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                        duration: 2,
-                        type: "spring",
-                        bounce: 0.4,
-                    }
-                }}>one stop
-            </motion.h1>
-            <motion.h1
-                initial={{
-                    opacity: 0,
-                    x: 200
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                        duration: 2,
-                        delay: 0.1,
-                        type: "spring",
-                        bounce: 0.4,
-                    }
-                }}><span className="block lg:hidden">t-shirt</span><span className="hidden lg:block">printing</span>
-            </motion.h1>
+    return (<div id="floor0" className="bg-slate-50 flex flex-col-reverse lg:flex-row gap-8 min-h-screen w-screen items-center justify-center relative z-10">
+        <div className="absolute bg-blue-950 w-8 h-10 bottom-4 rounded-full flex justify-center items-center">
+            <div className="border-white border-2 flex h-8 items-center justify-center rounded-3xl w-6 text-4xl z-10">
+                <div className="animate-scroll bg-white h-1 rounded-full w-1"></div>
+            </div>
         </div>
-        <Image className="absolute w-[350px] lg:w-[450px] z-20" alt="" height={450} width={450} src={`/assets/panel/white-t-shirt.png`} />
-        <div className="text-blue-950 text-8xl lg:text-9xl pl-[80px] text-end z-30">
-            <motion.h1
-                initial={{
-                    opacity: 0,
-                    x: -200
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                        duration: 2,
-                        type: "spring",
-                        bounce: 0.4,
-                    }
-                }}><span className="block lg:hidden">printing</span><span className="hidden lg:block">t-shirt</span>
-            </motion.h1>
-            <motion.h1
-                initial={{
-                    opacity: 0,
-                    x: -200
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                        duration: 2,
-                        delay: 0.1,
-                        type: "spring",
-                        bounce: 0.4,
-                    }
-                }}>service
-            </motion.h1>
+        <div className="flex flex-col gap-6 md:gap-8 lg:gap-10 justify-center max-w-[600px] px-4 sm:px-0">
+            <h1 className={`text-5xl sm:text-6xl`}><span className={`text-blue-950 ${monoton.className}`}>One Stop</span> T-shirt <br />Printing <span className={`text-blue-950 ${monoton.className}`}>Service</span> <br />in Johor Bahru</h1>
+            <h1 className="text-gray-500 text-md">Welcome to IMCreator, our factory produces fabrics in-house and designs & manufactures clothes according to customer requirements. We are the only JB that assists customers in &quot;tailoring&quot; their own exclusive corporate uniforms, ensuring you never clash outfits when stepping out.</h1>
+            <div className="flex gap-2 justify-center">
+                <button className="bg-blue-950 flex items-center gap-4 px-4 py-3 sm:px-8 sm:py-4 rounded-full shadow-sm text-white text-sm sm:text-md">SEE WHAT WE DO <FaArrowRight /></button>
+                <button className="flex font-bold items-center gap-4 px-4 py-3 sm:px-8 sm:py-4 rounded-full text-blue-950 text-sm sm:text-md">CONTACT US <FaPhoneFlip /></button>
+            </div>
         </div>
-        <div className="absolute w-screen lg:w-1/2 bg-blue-950 h-1/2 lg:h-screen left-0 top-0"></div>
+        <div className="cursor-pointer h-[300px] w-[300px] lg:h-[400px] lg:w-[400px] rounded-3xl shadow-xl overflow-hidden">
+            <CustomSwiper />
+        </div>
     </div>)
 }
 

@@ -4,17 +4,20 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { LuMouse } from "react-icons/lu";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
-import { About, Contact, Header, Loading, Menu, Panel, ScrollDot, Service, Work } from "@/components";
+import { About, Contact, Footer, Header, Loading, Menu, Panel, ScrollDot, Service, Work } from "@/components";
 import { RootState } from "@/store";
 import { minusFloor, plusFloor, setFloor } from "@/store/slice/floorSlice";
 import { AnimatePresence, motion } from "framer-motion";
+import AnimatedMouse from "@/utils/AnimatedMouse";
+import Lenis from '@studio-freight/lenis';
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const { floor } = useSelector((state: RootState) => state.floor);
+  //const dispatch = useDispatch();
+  //const { floor } = useSelector((state: RootState) => state.floor);
   const [ loading, setLoading ] = useState(true);
+  const [ hideHeader, setHideHeader ] = useState(false);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const element = document.getElementById(`floor${floor}`);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -36,7 +39,19 @@ const Home = () => {
     return () => {
       window.removeEventListener('wheel', handleScroll);
     };
-  }, []);
+  }, []);*/
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if(window.scrollY > 0) setHideHeader(true);
+      else setHideHeader(false);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [])
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -48,10 +63,21 @@ const Home = () => {
     };
   }, []);
 
-  if(loading) return <div className="flex items-center justify-center h-screen w-screen"><Loading /></div>
+  useEffect(() => {
+    const lenis = new Lenis()
+
+    const raf = (time: any) => {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  }, [])
+
+  if (loading) return <div className="flex items-center justify-center h-screen w-screen"><Loading /></div>
 
   return (
-    <motion.main 
+    <motion.main
       initial={{
         opacity: 0,
         borderRadius: "50%",
@@ -65,16 +91,14 @@ const Home = () => {
           duration: 1,
         }
       }}
-      className="flex flex-col overflow-hidden">
-      <ScrollDot />
-      <Menu />
-      <Header />
+      className="flex flex-col">
+      {/*<Header hideHeader={hideHeader} />*/}
       <Panel />
       <About />
-      <Service />
       <Work />
-      <Contact />
-      { floor !== 4 && 
+      <Footer />
+      {/*<ScrollDot />
+      floor !== 4 && 
         <AnimatePresence>
           <motion.div 
             initial={{
@@ -100,7 +124,7 @@ const Home = () => {
             />
           </motion.div>
         </AnimatePresence>
-      }
+      */}
     </motion.main>
   );
 }
