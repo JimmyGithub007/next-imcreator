@@ -93,6 +93,7 @@ const Home = () => {
       }}
       className="flex flex-col">
       <Header hideHeader={hideHeader} />
+      <Menu />
       <Panel />
       <About />
       <Work />

@@ -7,7 +7,7 @@ const monoton = Monoton({ subsets: ["latin"], weight: '400' });
 import CustomSwiper from "@/utils/CustomSwiper";
 
 const Panel = () => {
-    return (<div id="floor0" className="bg-slate-50 flex flex-col-reverse lg:flex-row gap-4 md:gap-8 min-h-screen w-screen items-center justify-center relative z-10">
+    return (<div className="bg-slate-50 flex flex-col-reverse lg:flex-row gap-4 md:gap-8 min-h-screen w-screen items-center justify-center relative z-10">
         <div className="absolute bg-blue-950 w-8 h-10 bottom-2 sm:bottom-4 rounded-full flex justify-center items-center">
             <div className="border-white border-2 flex h-8 items-center justify-center rounded-3xl w-6 text-4xl z-10">
                 <div className="animate-scroll bg-white h-1 rounded-full w-1"></div>
