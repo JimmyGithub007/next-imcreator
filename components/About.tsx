@@ -36,8 +36,8 @@ const About = () => {
     const videoThnumbnailScale5 = useTransform(scrollYProgress4, [0, 1], [2, 1.1])
 
     return (<div ref={refCard1} className="bg-slate-50 flex flex-col items-center w-screen text-white z-10">
-        <motion.div style={{scale: cardScale}}  className="flex items-center h-screen sticky top-0">
-            <motion.div style={{scale: cardScale1}} className="bg-blue-950 flex flex-col relative sm:flex-row gap-8 items-center justify-center py-24 rounded-3xl w-[calc(100vw-12px)] sm:w-[calc(100vw-80px)] max-w-[1000px] min-h-[700px] shadow-md shadow-blue-950/40">
+        <motion.div style={{scale: cardScale}} className="flex items-center h-screen sticky top-0">
+            <motion.div style={{scale: cardScale1}} className="bg-blue-950 flex flex-col relative md:flex-row gap-8 items-center justify-center py-24 w-screen sm:rounded-3xl sm:w-[calc(100vw-12px)] md:w-[calc(100vw-80px)] max-w-[1000px] h-screen sm:h-auto sm:min-h-[700px] shadow-md shadow-blue-950/40">
                 <h1 className={`absolute right-2 top-2 text-7xl ${sacramento.className}`}>1</h1>
                 <div className="bg-slate-50 flex items-center justify-center h-[300px] w-[300px] sm:w-[400px] sm:h-[400px] shadow-md shadow-black/40">
                     <FramerMagnetic>
@@ -61,18 +61,7 @@ const About = () => {
             </motion.div>
         </motion.div>
         <div ref={refCard2} className="flex items-center h-screen sticky top-0">
-            <motion.div style={{scale: cardScale2}} className="bg-blue-900 flex flex-col gap-8 items-center justify-center py-24 relative rounded-3xl w-[calc(100vw-12px)] sm:w-[calc(100vw-80px)] max-w-[1000px] min-h-[700px] shadow-md shadow-blue-900/40">
-                {/*<div className="flex gap-4 items-center text-2xl sm:text-4xl md:text-6xl">
-                    <div className="rounded-full overflow-hidden h-[50px] sm:h-[70px] md:h-[80px] flex items-center">
-                        <motion.div style={{scale: imageScale}}>
-                            <Image alt="" width={180} height={180} src={"/assets/about/about.jpg"} />
-                        </motion.div>
-                    </div><b>Unique</b> Design
-                </div>
-                <div className="flex gap-4 items-center">
-                    <div className="text-2xl sm:text-4xl md:text-6xl"><b>For Your</b> Tshirt</div>
-                    <button className="bg-slate-50 flex items-center gap-4 px-4 py-3 sm:px-8 sm:py-4 rounded-full text-blue-950 text-sm sm:text-md">SEE WHAT WE DO <FaArrowRight /></button>
-                </div>*/}
+            <motion.div style={{scale: cardScale2}} className="bg-[#639cd9] flex flex-col gap-8 items-center justify-center py-24 relative w-screen sm:rounded-3xl sm:w-[calc(100vw-12px)] md:w-[calc(100vw-80px)] max-w-[1000px] sm:h-auto sm:min-h-[700px] shadow-md shadow-[#639cd9]/40">
                 <h1 className={`absolute right-2 top-2 text-7xl ${sacramento.className}`}>2</h1>
                 <h1 className={`text-xl ${special_elite.className}`}>WHY PEOPLE CHOOSE US?</h1>
                 <div className="divide-y-4 divide-dotted flex flex-col px-8 max-w-[550px]">
@@ -97,7 +86,7 @@ const About = () => {
                         <span>Various printing methods</span>
                     </div>
                 </div>
-                <div className="flex gap-12">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-12">
                     <div className="flex flex-col items-center w-20 md:w-24">
                         <div className={`text-4xl md:text-6xl ${shadows_into_light.className}`}>
                             <CountUp enableScrollSpy={true} duration={3} start={0} end={20} />+
@@ -126,39 +115,39 @@ const About = () => {
             </motion.div>
         </div>
         <div ref={refCard3} className="flex h-screen items-center sticky top-0">
-            <motion.div style={{scale: cardScale3}} className="bg-slate-900 flex flex-col-reverse relative sm:flex-row gap-8 items-center justify-center py-24 rounded-3xl w-[calc(100vw-12px)] sm:w-[calc(100vw-80px)] max-w-[1000px] min-h-[700px] shadow-md shadow-slate-900/40">
+            <motion.div style={{scale: cardScale3}} className="bg-[#5baaec] flex flex-col-reverse relative sm:flex-row gap-8 items-center justify-center py-24 w-screen sm:rounded-3xl sm:w-[calc(100vw-12px)] md:w-[calc(100vw-80px)] max-w-[1000px] h-screen sm:h-auto sm:min-h-[700px] shadow-md shadow-[#5baaec]/40">
                 <h1 className={`absolute right-2 top-2 text-7xl ${sacramento.className}`}>3</h1>
                 <div className="flex flex-col gap-8 items-center px-8">
                     <h1 className={`text-xl ${special_elite.className}`}>HOW WE PROCESS?</h1>
                     <div className="flex items-center gap-2">
-                        <span>One to one professional consultation</span>
+                        <span className="text-sm sm:text-lg">One to one professional consultation</span>
                         <h1 className={`${monoton.className} text-yellow-400 text-3xl md:text-5xl`}>01</h1>
-                        <button className="bg-slate-200 flex font-bold items-center gap-2 px-6 py-3 rounded-full text-slate-900 text-sm sm:text-md shadow-sm shadow-slate-200/40"><LuPhone /> Contact Us</button>
+                        <button className="bg-slate-200 flex font-bold items-center gap-2 px-6 py-3 rounded-full text-[#5baaec] text-sm sm:text-md shadow-sm shadow-slate-200/40"><LuPhone /> Contact Us</button>
                     </div>
                     <div className="flex items-center gap-2">
-                        <button className="bg-slate-200 flex font-bold items-center gap-2 px-6 py-3 rounded-full text-slate-900 text-sm sm:text-md shadow-sm shadow-slate-200/40">How We Customize Your Shirt?</button>
+                        <button className="bg-slate-200 flex font-bold items-center gap-2 px-6 py-3 rounded-full text-[#5baaec] text-sm sm:text-md shadow-sm shadow-slate-200/40">How We Customize Your Shirt?</button>
                         <h1 className={`${monoton.className} text-yellow-400 text-3xl md:text-5xl`}>02</h1>
-                        <span>Design (Provide your design or we help you design)</span>
+                        <span className="text-sm sm:text-lg">Design (Provide your design or we help you design)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <span>Complete your payment</span>
+                    <span className="text-sm sm:text-lg">Complete your payment</span>
                         <h1 className={`${monoton.className} text-yellow-400 text-3xl md:text-5xl`}>03</h1>
                     </div>
                     <div className="flex items-center gap-2">
-                    <button className="bg-slate-200 flex font-bold items-center gap-2 px-6 py-3 rounded-full text-slate-900 text-sm sm:text-md shadow-sm shadow-slate-200/40">How We Print?</button>
+                    <button className="bg-slate-200 flex font-bold items-center gap-2 px-6 py-3 rounded-full text-[#5baaec] text-sm sm:text-md shadow-sm shadow-slate-200/40">How We Print?</button>
                         <h1 className={`${monoton.className} text-yellow-400 text-3xl md:text-5xl`}>04</h1>
-                        <span>Start printing & packaging</span>
+                        <span className="text-sm sm:text-lg">Start printing & packaging</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <TbTruckDelivery className="text-6xl" />
                         <h1 className={`${monoton.className} text-yellow-400 text-3xl md:text-5xl`}>05</h1>
-                        <span>7 days delivery</span>
+                        <span className="text-sm sm:text-lg">7 days delivery</span>
                     </div>
                 </div>
             </motion.div>
         </div>
         <div ref={refCard4} className="flex h-screen items-center sticky top-0">
-            <motion.div style={{scale: cardScale4}} className="bg-red-900 flex flex-col-reverse relative sm:flex-row gap-8 items-center justify-center py-24 rounded-3xl w-[calc(100vw-12px)] sm:w-[calc(100vw-80px)] max-w-[1000px] min-h-[700px] shadow-md shadow-red-900/40">
+            <motion.div style={{scale: cardScale4}} className="bg-[#526ed0] flex flex-col-reverse relative sm:flex-row gap-8 items-center justify-center py-24 w-screen sm:rounded-3xl sm:w-[calc(100vw-12px)] md:w-[calc(100vw-80px)] max-w-[1000px] h-screen sm:h-auto sm:min-h-[700px] shadow-md shadow-[#526ed0]/40">
                 <h1 className={`absolute right-2 top-2 text-7xl ${sacramento.className}`}>4</h1>
                 <div className="flex flex-col items-center gap-8">
                     <h1 className={`text-xl ${special_elite.className}`}>HOW WE CUSTOMIZE YOUR SHIRT?</h1>
@@ -168,8 +157,8 @@ const About = () => {
                         </motion.div>
                         <FramerMagnetic>
                             <button className="relative flex text-6xl">
-                                <FaCirclePlay className="animate-ping absolute inline-flex h-full w-full opacity-75 text-red-900" />
-                                <FaCirclePlay className="relative inline-flex text-6xl text-red-900" />
+                                <FaCirclePlay className="animate-ping absolute inline-flex h-full w-full opacity-75 text-[#526ed0]" />
+                                <FaCirclePlay className="relative inline-flex text-6xl text-[#526ed0]" />
                             </button>
                         </FramerMagnetic>
                     </div>
@@ -177,7 +166,7 @@ const About = () => {
             </motion.div>
         </div>
         <div ref={refCard5} className="flex h-screen items-center sticky top-0">
-            <motion.div className="bg-indigo-900 flex flex-col-reverse relative sm:flex-row gap-8 items-center justify-center py-24 rounded-3xl w-[calc(100vw-12px)] sm:w-[calc(100vw-80px)] max-w-[1000px] min-h-[700px] shadow-md shadow-indigo-900/40">
+            <motion.div className="bg-[#484cb0] flex flex-col-reverse relative sm:flex-row gap-8 items-center justify-center py-24 w-screen sm:rounded-3xl sm:w-[calc(100vw-12px)] md:w-[calc(100vw-80px)] max-w-[1000px] h-screen sm:h-auto sm:min-h-[700px] shadow-md shadow-[#484cb0]/40">
                 <h1 className={`absolute right-2 top-2 text-7xl ${sacramento.className}`}>5</h1>
                 <div className="flex flex-col items-center gap-8">
                     <h1 className={`text-xl ${special_elite.className}`}>HOW WE PRINT?</h1>
@@ -187,8 +176,8 @@ const About = () => {
                         </motion.div>
                         <FramerMagnetic>
                             <button className="relative flex text-6xl">
-                                <FaCirclePlay className="animate-ping absolute inline-flex h-full w-full opacity-75 text-indigo-900" />
-                                <FaCirclePlay className="relative inline-flex text-6xl text-indigo-900" />
+                                <FaCirclePlay className="animate-ping absolute inline-flex h-full w-full opacity-75 text-[#484cb0]" />
+                                <FaCirclePlay className="relative inline-flex text-6xl text-[#484cb0]" />
                             </button>
                         </FramerMagnetic>
                     </div>
