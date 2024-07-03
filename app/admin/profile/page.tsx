@@ -85,8 +85,10 @@ const Profile = () => {
             animate={{
                 opacity: 1,
             }}
-            className="bg-gradient-to-r from-cyan-500 to-blue-500  flex h-40 items-center justify-between px-8 rounded-3xl shadow-md text-white w-full">
-            <div className="text-lg">Admin / Profile</div>
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 h-40 px-8 pt-6 rounded-3xl shadow-md text-white w-full">
+            <div className="flex h-14 items-center">
+                <div className="text-lg">Admin / Profile</div>
+            </div>
         </motion.header>
         <motion.div
             initial={{

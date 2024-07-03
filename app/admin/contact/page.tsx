@@ -103,8 +103,10 @@ const Contact = () => {
                     duration: 1
                 }
             }}
-            className="bg-gradient-to-r from-cyan-500 to-blue-500  flex h-40 items-center justify-between px-8 rounded-3xl shadow-md text-white w-full">
-            <div className="text-lg">Admin / Contact</div>
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 h-40 px-8 pt-6 rounded-3xl shadow-md text-white w-full">
+            <div className="flex h-14 items-center">
+                <div className="text-lg">Admin / Contact</div>
+            </div>
         </motion.header>
         <div className="flex flex-col gap-4 -mt-16">
             <motion.div

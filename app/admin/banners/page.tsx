@@ -26,7 +26,7 @@ type banners = {
     sortingId: number,
     title: string,
     statusId: number,
-    gallery: string,
+    imageUrl: string,
     dateCreated: string,
 }
 
@@ -106,14 +106,14 @@ const Banners = () => {
                             await updateDoc(bannerDoc, {
                                 title: data.title,
                                 statusId: data.statusId,
-                                gallery: imageUrl,
+                                imageUrl: imageUrl,
                             });
                         } else {
                             // Add new banner
                             await addDoc(collection(db, "banners"), {
                                 title: data.title,
                                 statusId: data.statusId,
-                                gallery: imageUrl,
+                                imageUrl: imageUrl,
                                 sortingId: rows.length, // New item at the end
                                 dateCreated: new Date()
                             });
@@ -138,7 +138,7 @@ const Banners = () => {
 
     const onEdit = (row: banners) => {
         setEditId(row.id);
-        setSelectedImage(row.gallery);
+        setSelectedImage(row.imageUrl);
         reset({
             title: row.title,
             statusId: row.statusId,
@@ -194,14 +194,14 @@ const Banners = () => {
         const bannerQuery = await getDocs(query(collection(db, "banners"), orderBy("sortingId"))); // updated
         const banners = bannerQuery.docs.map(async (doc) => {
             const b = doc.data();
-            const imgRef = ref(sdb, b.gallery);
-            const imgURL = await getDownloadURL(imgRef);
+            //const imgRef = ref(sdb, b.gallery);
+            //const imgURL = await getDownloadURL(imgRef);
             return {
                 id: doc.id,
                 sortingId: b.sortingId,
                 title: b.title,
                 statusId: b.statusId,
-                gallery: imgURL,
+                imageUrl: b.imageUrl,
                 dateCreated: b.dateCreated?.toDate().toDateString(),
             };
         });
@@ -228,15 +228,17 @@ const Banners = () => {
                     duration: 1
                 }
             }}
-            className="bg-gradient-to-r from-cyan-500 to-blue-500  flex h-40 items-center justify-between px-8 rounded-3xl shadow-md text-white w-full">
-            <div className="text-lg">Admin / Banners</div>
-            <div className="flex flex-col items-end">
-                <button onClick={() => {
-                    reset({
-                        title: "", statusId: 1
-                    });
-                    setOpen(true);
-                }} className="bg-white duration-300 flex items-center justify-center rounded-full shadow-md h-14 text-blue-950 w-14 hover:bg-slate-100"><FaPlus /></button>
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 h-40 px-8 pt-6 rounded-3xl shadow-md text-white w-full">
+            <div className="flex items-center justify-between">
+                <div className="text-lg">Admin / Banners</div>
+                <div className="flex flex-col items-end">
+                    <button onClick={() => {
+                        reset({
+                            title: "", statusId: 1
+                        });
+                        setOpen(true);
+                    }} className="bg-white duration-300 flex items-center justify-center rounded-full shadow-md h-14 text-blue-950 w-14 hover:bg-slate-100"><FaPlus /></button>
+                </div>
             </div>
         </motion.header>
         <div className="flex flex-col gap-4 -mt-16">
@@ -278,7 +280,7 @@ const Banners = () => {
                                                     <TableRow ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps} sx={{ 'td, th': { borderColor: "#172554" }, '&:last-child td, &:last-child th': { border: 0 } }}>
                                                         <TableCell className="text-blue-950" component="th" scope="row"><div className="duration-300 flex items-center justify-center cursor-move hover:bg-slate-100 rounded-full h-8 w-8 text-xl"><MdDragIndicator /></div></TableCell>
                                                         <TableCell className="text-blue-950" align="right">{row.title}</TableCell>
-                                                        <TableCell className="text-blue-950" align="right"><Image className="rounded-md shadow-md" alt="" height={50} width={50} src={row.gallery} /></TableCell>
+                                                        <TableCell className="text-blue-950" align="right"><Image className="rounded-md shadow-md" alt="" height={50} width={50} src={row.imageUrl} /></TableCell>
                                                         <TableCell className="text-blue-950" align="right"><div className="flex gap-2 items-center">{statusArr.find(e => e.id === row.statusId)?.name} <Dot colorClass={statusArr.find(e => e.id === row.statusId)?.color || "bg-slate-150"} /></div></TableCell>
                                                         <TableCell className="text-blue-950" align="right">{row.dateCreated}</TableCell>
                                                         <TableCell className="text-blue-950" align="right">
