@@ -10,7 +10,7 @@ import { getDownloadURL, ref } from 'firebase/storage';
 
 type banners = {
     sortingId: number,
-    gallery: string,
+    imageUrl: string,
 }
 
 const CustomSwiper = () => {
@@ -20,11 +20,11 @@ const CustomSwiper = () => {
         const bannerQuery = await getDocs(query(collection(db, "banners"), orderBy("sortingId"))); // updated
         const banners = bannerQuery.docs.map(async (doc) => {
             const b = doc.data();
-            const imgRef = ref(sdb, b.gallery);
-            const imgURL = await getDownloadURL(imgRef);
+            //const imgRef = ref(sdb, b.gallery);
+            //const imgURL = await getDownloadURL(imgRef);
             return {
                 sortingId: b.sortingId,
-                gallery: imgURL,
+                imageUrl: b.imageUrl,
             };
         });
 
@@ -50,7 +50,7 @@ const CustomSwiper = () => {
         >
             {
                 data?.map((value, key) => (
-                    <SwiperSlide key={key}><Image alt="" width={400} height={400} src={value.gallery} /></SwiperSlide>
+                    <SwiperSlide key={key}><Image alt="" width={400} height={400} src={value.imageUrl} /></SwiperSlide>
                 ))
             }
         </Swiper>
