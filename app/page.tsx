@@ -1,21 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { LuMouse } from "react-icons/lu";
-import { IoChevronDownCircleOutline } from "react-icons/io5";
+//import { useDispatch, useSelector } from "react-redux";
+//import { LuMouse } from "react-icons/lu";
+//import { IoChevronDownCircleOutline } from "react-icons/io5";
 import { About, Contact, Footer, Header, Loading, Menu, Panel, ScrollDot, Service, Work } from "@/components";
-import { RootState } from "@/store";
-import { minusFloor, plusFloor, setFloor } from "@/store/slice/floorSlice";
+//import { RootState } from "@/store";
+//import { minusFloor, plusFloor, setFloor } from "@/store/slice/floorSlice";
 import { AnimatePresence, motion } from "framer-motion";
-import AnimatedMouse from "@/utils/AnimatedMouse";
 import Lenis from '@studio-freight/lenis';
+import CircleText from "@/utils/CircleText";
+import withAdminPageHOC from "@/hoc/withAdminPageHOC";
+//import AnimatedMouse from "@/utils/AnimatedMouse";
+//import useMousePosition from "@/hooks/useMousePosition";
 
 const Home = () => {
   //const dispatch = useDispatch();
   //const { floor } = useSelector((state: RootState) => state.floor);
   const [ loading, setLoading ] = useState(true);
   const [ hideHeader, setHideHeader ] = useState(false);
+
+  const [ isHovered, setIsHovered ] = useState(false);
+  //const { x, y } = useMousePosition();
+  //const size = isHovered ? 400 : 40;
 
   /*useEffect(() => {
     const element = document.getElementById(`floor${floor}`);
@@ -56,8 +63,7 @@ const Home = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoading(false);
-    }, 1000);
-
+    }, 500);
     return () => {
       clearTimeout(timeoutId);
     };
@@ -65,7 +71,6 @@ const Home = () => {
 
   useEffect(() => {
     const lenis = new Lenis()
-
     const raf = (time: any) => {
       lenis.raf(time)
       requestAnimationFrame(raf)
@@ -74,26 +79,22 @@ const Home = () => {
     requestAnimationFrame(raf)
   }, [])
 
-  if (loading) return <div className="flex items-center justify-center h-screen w-screen"><Loading /></div>
+  //if (loading) return <div className="flex items-center justify-center h-screen w-screen"><Loading /></div>
 
   return (
     <motion.main
       initial={{
         opacity: 0,
-        borderRadius: "50%",
-        scale: 0.1,
       }}
       animate={{
         opacity: 1,
-        scale: 1,
-        borderRadius: 0,
         transition: {
           duration: 2,
         }
       }}
-      className="flex flex-col">
-      <Header hideHeader={hideHeader} />
-      <Menu />
+      className="flex flex-col min-h-screen relative w-screen">
+      <Header />
+      {/*<Menu />*/}
       <Panel />
       <About />
       <Work />
