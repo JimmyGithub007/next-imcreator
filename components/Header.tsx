@@ -6,14 +6,14 @@ import MenuToggleButton from "@/utils/MenuToggleButton";
 import { Menu } from ".";
 import { RootState } from "@/store";
 
-const Header = ({ hideHeader }: { hideHeader: boolean }) => {
+const Header = () => {
     //const dispatch = useDispatch();
     const { isOpen } = useSelector((state: RootState) => state.floor);
 
-    return (<motion.div className={`bg-slate-100 duration-300 fixed left-0 mix-blend-difference w-screen z-50`}>
+    return (<motion.div className={`bg-slate-100 duration-300 fixed left-0 w-screen z-50`}>
         <motion.div className="flex h-12 items-center justify-between px-8 w-full">
             <h1 className="font-bold text-xl z-10">IMCreator.</h1>
-            <MenuToggleButton />
+            {/*<MenuToggleButton />*/}
         </motion.div>
     </motion.div>)
 }

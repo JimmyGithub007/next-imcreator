@@ -34,3 +34,11 @@
     top: 1px;
 
 }
+
+.rotateText {
+    position: absolute;
+    transform-origin: 0 104px;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    top: 0;
+}
